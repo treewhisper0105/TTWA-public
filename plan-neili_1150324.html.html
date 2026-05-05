@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>桃園市內壢國小潛能班 親子自然探索暨攀樹體驗活動企劃書</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --deep: #0f3460;
+    --mid: #16213e;
+    --accent: #2563a8;
+    --leaf: #3a7d44;
+    --leaf-light: #e8f5e9;
+    --bark: #8b6914;
+    --sky: #dbeafe;
+    --sky-deep: #1e40af;
+    --sand: #fdf8f0;
+    --warm: #f5f0e8;
+    --gold: #c9a227;
+    --budget-school: #1e40af;
+    --budget-assoc: #2d6a2d;
+    --red-risk: #dc2626;
+    --yellow-risk: #ca8a04;
+    --green-risk: #16a34a;
+    --serif: 'Noto Serif TC', 'Georgia', serif;
+    --sans: 'Noto Sans TC', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--sand);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--deep) 0%, #0a2444 50%, #061830 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 80%, rgba(58,125,68,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(37,99,168,0.2) 0%, transparent 50%);
+  }
+
+  .cover-leaves {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .leaf-svg {
+    position: absolute;
+    opacity: 0.06;
+  }
+
+  .leaf-svg:nth-child(1) { top: 5%; left: 3%; width: 200px; transform: rotate(-20deg); }
+  .leaf-svg:nth-child(2) { top: 60%; right: 2%; width: 280px; transform: rotate(35deg); }
+  .leaf-svg:nth-child(3) { bottom: 5%; left: 15%; width: 160px; transform: rotate(10deg); }
+  .leaf-svg:nth-child(4) { top: 20%; right: 10%; width: 120px; transform: rotate(-45deg); }
+
+  .cover-badge {
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 20px;
+    border-radius: 2px;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: var(--sans);
+    margin-bottom: 40px;
+    backdrop-filter: blur(4px);
+  }
+
+  .cover-org {
+    position: relative;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    font-family: var(--serif);
+  }
+
+  .cover-en {
+    color: rgba(255,255,255,0.3);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 56px;
+    text-transform: uppercase;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 40px;
+  }
+
+  .cover-school {
+    position: relative;
+    color: rgba(255,255,255,0.85);
+    font-size: 22px;
+    font-family: var(--serif);
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+
+  .cover-title {
+    position: relative;
+    color: #fff;
+    font-size: clamp(28px, 5vw, 46px);
+    font-family: var(--serif);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 32px;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.4);
+  }
+
+  .cover-subtitle {
+    position: relative;
+    color: var(--gold);
+    font-size: 16px;
+    font-family: var(--serif);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 2px;
+    margin-bottom: 56px;
+  }
+
+  .cover-meta {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    color: rgba(255,255,255,0.45);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .cover-meta span { display: flex; align-items: center; gap: 8px; }
+  .cover-meta span::before { content: ''; display: block; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; }
+
+  /* ── LAYOUT ── */
+  .doc-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .sec {
+    margin-top: 56px;
+  }
+
+  .sec-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--deep);
+  }
+
+  .sec-num {
+    font-family: var(--serif);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    min-width: 40px;
+  }
+
+  .sec-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--deep);
+    letter-spacing: 1px;
+  }
+
+  .sec-sub {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--deep);
+    margin: 24px 0 10px;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent);
+  }
+
+  /* ── INFO CARDS ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .info-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    border-top: 3px solid var(--accent);
+  }
+
+  .info-label {
+    font-size: 11px;
+    color: #64748b;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-family: var(--sans);
+  }
+
+  .info-value {
+    font-size: 15px;
+    color: var(--deep);
+    font-weight: 600;
+    font-family: var(--serif);
+    line-height: 1.5;
+  }
+
+  /* ── PROSE ── */
+  .prose p {
+    margin-bottom: 14px;
+    color: #334155;
+    line-height: 1.9;
+  }
+
+  .prose strong { color: var(--deep); font-weight: 600; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .box {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 16px 0;
+  }
+
+  .box.blue { border-left: 4px solid var(--accent); background: #f0f7ff; }
+  .box.green { border-left: 4px solid var(--leaf); background: var(--leaf-light); }
+  .box.gold { border-left: 4px solid var(--gold); background: #fefce8; }
+  .box.bark { border-left: 4px solid var(--bark); background: #fdf6e3; }
+
+  .box-title {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .box.blue .box-title { color: var(--sky-deep); }
+  .box.green .box-title { color: var(--leaf); }
+  .box.gold .box-title { color: #92400e; }
+  .box.bark .box-title { color: var(--bark); }
+
+  /* ── DUAL TRACK ── */
+  .dual-track {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  @media (max-width: 640px) { .dual-track { grid-template-columns: 1fr; } }
+
+  .track-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .track-header {
+    padding: 16px 20px;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+  }
+
+  .track-card:nth-child(1) .track-header { background: linear-gradient(135deg, var(--leaf), #2d5a27); }
+  .track-card:nth-child(2) .track-header { background: linear-gradient(135deg, var(--accent), var(--deep)); }
+
+  .track-body { padding: 18px 20px; font-size: 14px; color: #475569; line-height: 1.8; }
+
+  /* ── TABLES ── */
+  .tbl-wrap { overflow-x: auto; margin: 16px 0; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 14px;
+  }
+
+  thead th {
+    background: var(--deep);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-family: var(--serif);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  thead th:first-child { border-radius: 10px 0 0 0; }
+  thead th:last-child { border-radius: 0 10px 0 0; }
+
+  tbody tr:nth-child(even) { background: #f8fafc; }
+  tbody tr:hover { background: #eff6ff; transition: background 0.15s; }
+
+  tbody td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+    line-height: 1.7;
+  }
+
+  .td-center { text-align: center; }
+  .td-num { text-align: right; font-family: 'Courier New', monospace; font-weight: 600; color: var(--deep); }
+
+  /* ── FLOW TABLE ── */
+  .flow-location {
+    background: var(--sky);
+    padding: 10px 16px;
+    font-size: 13px;
+    color: var(--sky-deep);
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .time-cell { color: var(--accent); font-weight: 600; white-space: nowrap; font-size: 13px; }
+
+  /* ── BULLETS ── */
+  .bullet-list {
+    list-style: none;
+    margin: 12px 0;
+  }
+
+  .bullet-list li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+    line-height: 1.7;
+  }
+
+  .bullet-list li::before {
+    content: '▪';
+    position: absolute;
+    left: 6px;
+    color: var(--accent);
+    font-size: 14px;
+  }
+
+  .bullet-list li:last-child { border-bottom: none; }
+
+  /* ── STUDENT TABLE ── */
+  .no-col { text-align: center; color: #94a3b8; }
+  .age-col { text-align: center; }
+  .yn-yes { color: var(--leaf); font-weight: 700; text-align: center; }
+  .yn-no { color: #dc2626; font-weight: 700; text-align: center; }
+
+  /* ── BUDGET ── */
+  .budget-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 600px) { .budget-summary { grid-template-columns: 1fr; } }
+
+  .budget-card {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .budget-card.total { background: linear-gradient(135deg, var(--deep), #0a2444); color: white; }
+  .budget-card.school { background: linear-gradient(135deg, #1e40af, #2563eb); color: white; }
+  .budget-card.assoc { background: linear-gradient(135deg, var(--leaf), #2d5a27); color: white; }
+
+  .budget-label { font-size: 12px; opacity: 0.8; letter-spacing: 1px; margin-bottom: 8px; }
+  .budget-amount { font-family: var(--serif); font-size: 28px; font-weight: 700; }
+  .budget-sub { font-size: 11px; opacity: 0.7; margin-top: 4px; }
+
+  .row-total { background: var(--deep) !important; }
+  .row-total td { color: white !important; font-weight: 700; }
+  .row-school { background: #dbeafe !important; }
+  .row-school td { color: var(--sky-deep) !important; font-weight: 600; }
+  .row-assoc { background: var(--leaf-light) !important; }
+  .row-assoc td { color: var(--leaf) !important; font-weight: 600; }
+
+  /* ── RISK MATRIX ── */
+  .risk-legend {
+    display: flex;
+    gap: 20px;
+    margin: 12px 0 20px;
+    flex-wrap: wrap;
+  }
+
+  .risk-dot {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #475569;
+  }
+
+  .risk-dot span {
+    width: 14px; height: 14px; border-radius: 3px; display: inline-block;
+  }
+
+  .risk-dot .r-green { background: #dcfce7; border: 1px solid #16a34a; }
+  .risk-dot .r-yellow { background: #fef9c3; border: 1px solid #ca8a04; }
+  .risk-dot .r-red { background: #fee2e2; border: 1px solid #dc2626; }
+
+  .risk-before { background: #fef9c3 !important; font-weight: 700; color: var(--yellow-risk) !important; }
+  .risk-after-low { background: #dcfce7 !important; font-weight: 700; color: var(--green-risk) !important; }
+
+  /* ── BENEFITS ── */
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  .benefit-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    border-top: 3px solid var(--accent);
+  }
+
+  .benefit-icon { font-size: 28px; margin-bottom: 10px; }
+  .benefit-title { font-family: var(--serif); font-weight: 700; color: var(--deep); margin-bottom: 6px; font-size: 15px; }
+  .benefit-desc { color: #64748b; font-size: 13px; line-height: 1.7; }
+
+  /* ── RISK SECTION ── */
+  .risk-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 12px;
+  }
+
+  .risk-card-title { font-weight: 700; color: var(--deep); margin-bottom: 4px; font-family: var(--serif); }
+  .risk-card-body { color: #475569; font-size: 14px; }
+
+  /* ── SIGNATURE ── */
+  .sig-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+    padding: 32px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 600px) { .sig-block { grid-template-columns: 1fr; } }
+
+  .sig-party { font-family: var(--serif); font-weight: 700; font-size: 16px; color: var(--deep); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
+  .sig-line { margin: 16px 0; padding-bottom: 8px; border-bottom: 1px dashed #cbd5e1; color: #475569; font-size: 14px; display: flex; justify-content: space-between; }
+  .sig-line span { color: #94a3b8; min-width: 120px; }
+
+  /* ── NOTE ── */
+  .note {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
+    padding: 12px 0;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 8px;
+  }
+
+  .note::before { content: '※ '; color: var(--accent); font-weight: 600; }
+
+  /* ── PRINT ── */
+  @media print {
+    .cover { min-height: auto; padding: 40px; page-break-after: always; }
+    .sec { page-break-inside: avoid; }
+    body { font-size: 12px; }
+  }
+
+  /* ── FADE IN ── */
+  .sec { opacity: 0; transform: translateY(16px); animation: fadeUp 0.5s ease forwards; }
+  .sec:nth-child(1) { animation-delay: 0.1s; }
+  .sec:nth-child(2) { animation-delay: 0.15s; }
+  .sec:nth-child(3) { animation-delay: 0.2s; }
+  .sec:nth-child(4) { animation-delay: 0.25s; }
+  .sec:nth-child(5) { animation-delay: 0.3s; }
+  .sec:nth-child(n+6) { animation-delay: 0.35s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ COVER ══ -->
+<div class="cover">
+  <div class="cover-leaves">
+    <svg class="leaf-svg" viewBox="0 0 200 300" fill="white"><path d="M100 10 C150 60 180 120 160 200 C140 280 80 290 60 240 C40 190 20 120 60 60 Z"/><line x1="100" y1="10" x2="100" y2="290" stroke="white" stroke-width="2" opacity="0.5"/></svg>
+    <svg class="leaf-svg" viewBox="0 0 200 300" fill="white"><path d="M100 10 C150 60 180 120 160 200 C140 280 80 290 60 240 C40 190 20 120 60 60 Z"/></svg>
+    <svg class="leaf-svg" viewBox="0 0 200 300" fill="white"><path d="M100 10 C150 60 180 120 160 200 C140 280 80 290 60 240 C40 190 20 120 60 60 Z"/></svg>
+    <svg class="leaf-svg" viewBox="0 0 200 300" fill="white"><path d="M100 10 C150 60 180 120 160 200 C140 280 80 290 60 240 C40 190 20 120 60 60 Z"/></svg>
+  </div>
+
+  <div class="cover-badge">文件編號 TTWA-115-NL-001 · v9</div>
+  <div class="cover-org">台灣樹・説自然人文協會</div>
+  <div class="cover-en">Taiwan Tree Whisper Association</div>
+  <div class="cover-divider"></div>
+  <div class="cover-school">桃園市內壢國小潛能班</div>
+  <div class="cover-title">親子自然探索暨攀樹<br>體驗活動企劃書</div>
+  <div class="cover-subtitle">陪伴，讓勇氣無礙生長</div>
+  <div class="cover-meta">
+    <span>撰寫：115 年 3 月 25 日</span>
+    <span>修訂：115 年 6 月 1 日</span>
+    <span>活動：115 年 6 月 8 日</span>
+  </div>
+</div>
+
+<!-- ══ BODY ══ -->
+<div class="doc-wrap">
+
+  <!-- 基本資訊 -->
+  <div class="sec">
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-label">活動名稱</div>
+        <div class="info-value">桃園市內壢國小潛能班<br>親子自然探索暨攀樹體驗活動</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">活動日期</div>
+        <div class="info-value" style="color:#dc2626;">115 年 6 月 8 日（星期一）</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">活動時間</div>
+        <div class="info-value">08:30 – 12:40<br><span style="font-size:12px;color:#64748b;">含場地整備及恢復</span></div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">活動地點</div>
+        <div class="info-value">桃園市內壢國民小學<br>校園內</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">主辦單位</div>
+        <div class="info-value">桃園市內壢國民小學</div>
+      </div>
+      <div class="info-card">
+        <div class="info-label">協辦單位</div>
+        <div class="info-value">台灣樹・説自然人文協會</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 服務對象 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">七</span>
+      <span class="sec-title">服務對象</span>
+    </div>
+    <div class="box blue">
+      潛能班學生 <strong>20 名</strong>及其家長 <strong>20 名</strong>，合計約 <strong>40 名</strong>體驗者。隨行教師人數由學校確認後補填。
+    </div>
+  </div>
+
+  <!-- 活動目的 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">五</span>
+      <span class="sec-title">活動目的</span>
+    </div>
+    <div class="prose">
+      <p>每一棵大樹都有故事要説，而每一個孩子都值得聽見。</p>
+      <p>本活動以內壢國小校園為舞台，充分運用校園樹木與建築空間，透過「自然攀樹」與「建築探索」兩大主軸，為潛能班學生創造多元立體的挑戰體驗。協會教官團結合消防繩索專業技術，在建築外牆架設繩索探索系統，讓無法攀樹的孩子同樣能感受高度、克服心理限制，找到屬於自己的勇氣。</p>
+      <p>本活動核心理念「自發性選擇挑戰（Challenge by Choice）」，尊重每位孩子的步調與能力——無論攀上校園老樹、踩上走繩、坐上吊椅升空，還是藉助消防繩索沿建築外牆探索，每一種方式都是勇敢的表現，每一個孩子都值得被看見。</p>
+    </div>
+  </div>
+
+  <!-- 活動體驗設計 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">八</span>
+      <span class="sec-title">活動體驗設計（雙軌體驗模式）</span>
+    </div>
+    <p style="color:#475569;margin-bottom:20px;">本次活動結合校園環境特性，規劃「自然攀樹」與「建築繩索探索」雙軌並行，確保每位孩子無論身體狀況如何，都能找到適合自己的體驗方式。</p>
+    <div class="dual-track">
+      <div class="track-card">
+        <div class="track-header">🌳 軌道一｜自然攀樹體驗</div>
+        <div class="track-body">運用校園內適合攀樹之樹木，架設攀樹繩索系統，讓學生與家長以繩索輔助攀上樹冠，感受大自然的溫度與高度。重度障礙學生可透過吊椅系統升空，同樣能體驗「樹上的風景」。</div>
+      </div>
+      <div class="track-card">
+        <div class="track-header">🏗️ 軌道二｜建築繩索探索體驗</div>
+        <div class="track-body">協會教官團運用消防繩索救援專業技術，於校園建築外牆架設安全繩索系統，規劃垂直攀登網、走繩（高空平衡繩）等探索站，讓校樹資源有限的情況下仍能提供豐富的立體空間探索體驗。</div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:12px;">所有建築架設點均由協會教官團進行安全評估，確保掛點承重符合標準，並全程採雙重確保系統。</div>
+  </div>
+
+  <!-- 人力配置 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">九</span>
+      <span class="sec-title">人力配置</span>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>職務</th><th>人數</th><th>工作內容</th></tr></thead>
+        <tbody>
+          <tr><td>主教官</td><td class="td-center">1</td><td>課程設計、帶領活動、整體安全管理</td></tr>
+          <tr><td>助教／安全技術員</td><td class="td-center">5</td><td>裝備指導、攀樹及繩索確保、學生個別陪伴</td></tr>
+          <tr><td>系統架設員</td><td class="td-center">2</td><td>攀樹繩索系統及建築繩索系統架設、活動安全官（由助教兼任）</td></tr>
+          <tr><td>總務／攝影</td><td class="td-center">1～2</td><td>報到、裝備管理、活動紀錄</td></tr>
+          <tr><td><strong>陪伴志工</strong></td><td class="td-center"><strong>10</strong></td><td><strong>情感陪伴、活動協助、安全照護、心理支持</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">因服務對象為特殊需求學生，人力配比高於一般活動，以確保每位孩子獲得充分的安全照護與陪伴。</div>
+
+    <div class="sec-sub">九之一、志工招募</div>
+    <div class="prose">
+      <p>本活動將由協會統一招募至少 10 名陪伴志工，志工須經協會審核通過，並於活動當日提前到場接受安全教育訓練後方可參與。</p>
+      <p><strong>招募條件：</strong>年滿 18 歲、認同樹説理念、具備耐心與愛心。具特教、社工、護理相關背景者優先。</p>
+      <p><strong>志工福利：</strong>提供活動當日餐飲、投保富邦特定活動綜合險（第二類）、核發服務時數證明。</p>
+    </div>
+  </div>
+
+  <!-- 活動須知 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十</span>
+      <span class="sec-title">活動須知</span>
+    </div>
+    <ul class="bullet-list">
+      <li>參加者務必遵守現場教官及工作人員指示，以確保安全。</li>
+      <li><strong>參加者務必穿著運動鞋，不得穿著拖鞋、涼鞋等開放式鞋類入場。</strong></li>
+      <li>建議穿著長袖排汗衫、運動褲等方便活動之服裝，切勿穿著牛仔褲。</li>
+      <li>請自行準備飲用水、防曬及防蚊用品。</li>
+      <li>若學生有特殊疾病或身體狀況，請事先告知協會工作人員。</li>
+      <li>本活動全員投保富邦產物特定活動綜合險（第二類），涵蓋學生、家長、教師、工作人員及志工。投保行政作業請學校協助辦理。</li>
+      <li>活動將進行影音記錄，作為課程紀錄及公益推廣使用。</li>
+      <li>遇大雨、颱風等不可抗力因素，主辦單位有權取消或延期。</li>
+    </ul>
+  </div>
+
+  <!-- 活動流程 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十一</span>
+      <span class="sec-title">活動流程</span>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>時間</th><th>活動內容</th><th>負責人／組</th></tr></thead>
+        <tbody>
+          <tr><td colspan="3" class="flow-location">📍 活動地點：桃園市內壢國民小學校園內</td></tr>
+          <tr><td class="time-cell">07:30 – 08:00</td><td>工作人員集合（工作分配及說明）、場地整備、繩索系統架設</td><td>樹説教官團／志工</td></tr>
+          <tr><td class="time-cell">08:30 – 08:45</td><td>學生及家長報到、分組（攀樹組／建築探索組）</td><td>協會行政／志工</td></tr>
+          <tr><td class="time-cell">08:45 – 08:55</td><td>開幕式（致詞、活動介紹、感謝大樹儀式）</td><td>樹説教官團</td></tr>
+          <tr><td class="time-cell">08:55 – 09:10</td><td>安全小勇士（安全規範說明、認識裝備如何保護我們）</td><td>主教官</td></tr>
+          <tr><td class="time-cell">09:10 – 09:30</td><td>裝備穿戴教學與檢查（親子一起學穿裝備、助教逐一確認）</td><td>樹説教官團／志工</td></tr>
+          <tr><td class="time-cell">09:30 – 10:50</td><td><strong>雙軌親子體驗（攀樹站＋建築繩索探索站，分組輪流）</strong></td><td>樹説教官團／志工</td></tr>
+          <tr><td class="time-cell">10:50 – 11:30</td><td>感謝大樹、分享回饋（感謝儀式、心得分享、頒發體驗證書）</td><td>樹説教官團</td></tr>
+          <tr><td class="time-cell">11:30</td><td>裝備歸還、快樂賦歸</td><td>全體</td></tr>
+          <tr><td class="time-cell">11:30 – 12:30</td><td>裝備收拾、場地恢復</td><td>樹説教官團／志工</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-sub">十一之一、活動前線上工作會議</div>
+    <p style="color:#475569;margin-bottom:16px;">活動日前 3～5 天召開線上會議（約 1 小時），全體工作人員皆須參加。</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>時間</th><th>議程</th><th>主持／說明</th></tr></thead>
+        <tbody>
+          <tr><td>5 min</td><td>報到、確認出席人員</td><td>秘書長</td></tr>
+          <tr><td>10 min</td><td>活動概述與目標說明</td><td>主教官</td></tr>
+          <tr><td>10 min</td><td>學生概況說明（特殊需求、注意事項）</td><td>秘書長／學校老師</td></tr>
+          <tr><td>10 min</td><td>活動流程與分工確認（各站負責人、志工配置）</td><td>主教官</td></tr>
+          <tr><td>10 min</td><td>安全規範與緊急應變計畫</td><td>主教官</td></tr>
+          <tr><td>5 min</td><td>場地與建築掛點說明</td><td>秘書長</td></tr>
+          <tr><td>10 min</td><td>Q&A、綜合討論</td><td>全體</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 學生概況 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十二</span>
+      <span class="sec-title">學生概況（供教官團隊內部參考）</span>
+    </div>
+    <div class="box gold">
+      <div class="box-title">🔒 保密聲明</div>
+      本表僅供協會工作人員於活動前了解學生狀況，以利安全評估與人員調配，不對外公開。
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>序</th><th>姓名</th><th>年齡</th><th>障別／程度</th><th>聽指令</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td class="no-col">1</td><td>黃○淯</td><td class="age-col">13</td><td>智能障礙／重度</td><td class="yn-yes">是</td><td></td></tr>
+          <tr><td class="no-col">2</td><td>林○菲</td><td class="age-col">12</td><td>自閉症／中度</td><td class="yn-yes">是</td><td>較害怕嘗試新事物</td></tr>
+          <tr><td class="no-col">3</td><td>謝○凡</td><td class="age-col">12</td><td>自閉症／重度</td><td class="yn-yes">是</td><td>情緒起伏大</td></tr>
+          <tr><td class="no-col">4</td><td>高○維</td><td class="age-col">12</td><td>自閉症／中度</td><td class="yn-yes">是</td><td></td></tr>
+          <tr><td class="no-col">5</td><td>吳○昀</td><td class="age-col">12</td><td>腦性麻痺／中度</td><td class="yn-yes">是</td><td>右側萎縮，主要以左側操作</td></tr>
+          <tr><td class="no-col">6</td><td>樂○之</td><td class="age-col">12</td><td>自閉症／重度</td><td class="yn-no">否</td><td>有自傷行為，皮膚易過敏</td></tr>
+          <tr><td class="no-col">7</td><td>林○程</td><td class="age-col">12</td><td>腦性麻痺／重度</td><td class="yn-no">否</td><td>平日輪椅代步，可扶手走路，雙手有力</td></tr>
+          <tr><td class="no-col">8</td><td>林○宥</td><td class="age-col">12</td><td>自閉症／中度</td><td class="yn-yes">是</td><td>情緒反應大，皮膚易過敏</td></tr>
+          <tr><td class="no-col">9</td><td>吳○筳</td><td class="age-col">11</td><td>自閉症／重度</td><td class="yn-no">否</td><td>皮膚易過敏</td></tr>
+          <tr><td class="no-col">10</td><td>邱○瑞</td><td class="age-col">11</td><td>自閉症／重度</td><td class="yn-no">否</td><td>癲癇，曾參加攀樹活動</td></tr>
+          <tr><td class="no-col">11</td><td>林○萱</td><td class="age-col">10</td><td>唐氏症／重度</td><td class="yn-yes">是</td><td>低張，平衡感較差</td></tr>
+          <tr><td class="no-col">12</td><td>林○帆</td><td class="age-col">10</td><td>腦性麻痺／極重度</td><td class="yn-no">否</td><td>較害怕嘗試新事物</td></tr>
+          <tr><td class="no-col">13</td><td>呂○恩</td><td class="age-col">10</td><td>自閉症／重度</td><td class="yn-no">否</td><td></td></tr>
+          <tr><td class="no-col">14</td><td>劉○君</td><td class="age-col">9</td><td>智能障礙／中度</td><td class="yn-yes">是</td><td></td></tr>
+          <tr><td class="no-col">15</td><td>詹○凱</td><td class="age-col">9</td><td>自閉症／重度</td><td class="yn-no">否</td><td>較害怕嘗試新事物，配合度較差</td></tr>
+          <tr><td class="no-col">16</td><td>徐○瑜</td><td class="age-col">9</td><td>多重障礙／極重度</td><td class="yn-no">否</td><td>有自傷行為，動作不協調</td></tr>
+          <tr><td class="no-col">17</td><td>黃○寧</td><td class="age-col">8</td><td>自閉症／中度</td><td class="yn-no">否</td><td>過動</td></tr>
+          <tr><td class="no-col">18</td><td>柯○晨</td><td class="age-col">8</td><td>自閉症／重度</td><td class="yn-yes">是</td><td>較害怕嘗試新事物</td></tr>
+          <tr><td class="no-col">19</td><td>蔡○丞</td><td class="age-col">8</td><td>腦性麻痺／重度</td><td class="yn-no">否</td><td>低張，有胃造口，無法獨立坐、爬和行走</td></tr>
+          <tr><td class="no-col">20</td><td>巫○錚</td><td class="age-col">7</td><td>自閉症</td><td class="yn-no">否</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 使用設備 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十三</span>
+      <span class="sec-title">使用設備</span>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>類別</th><th>品項</th><th>數量</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td>個人裝備</td><td>兒童頭盔</td><td class="td-center">20</td><td>依學生體型配置</td></tr>
+          <tr><td>個人裝備</td><td>成人頭盔</td><td class="td-center">20</td><td>家長使用</td></tr>
+          <tr><td>個人裝備</td><td>兒童吊帶（大童／小童）</td><td class="td-center">20</td><td>依學生體型配置</td></tr>
+          <tr><td>個人裝備</td><td>成人吊帶</td><td class="td-center">20</td><td>家長使用</td></tr>
+          <tr><td>攀樹系統</td><td>攀樹繩組（含繩袋）</td><td class="td-center">5</td><td></td></tr>
+          <tr><td>攀樹系統</td><td>護樹管（大小環）</td><td class="td-center">5</td><td></td></tr>
+          <tr><td>攀樹系統</td><td>投擲折疊箱（含投擲繩、豆袋）</td><td class="td-center">2</td><td></td></tr>
+          <tr><td>攀樹系統</td><td>三段自動鎖鉤環</td><td class="td-center">15</td><td></td></tr>
+          <tr><td>建築繩索系統</td><td>消防繩索（靜力繩）</td><td class="td-center">6</td><td>建築外牆垂直探索及架設用</td></tr>
+          <tr><td>建築繩索系統</td><td>攀登網／繩梯組</td><td class="td-center">2</td><td>建築外牆固定式架設</td></tr>
+          <tr><td>建築繩索系統</td><td>固定式錨點套組</td><td class="td-center">6</td><td>建築結構掛點用</td></tr>
+          <tr><td>輔助系統</td><td>走繩組</td><td class="td-center">2</td><td>視場地狀況</td></tr>
+          <tr><td>輔助系統</td><td>吊椅／鞦韆系統</td><td class="td-center">2</td><td>適合重度障礙學生</td></tr>
+          <tr><td>安全裝備</td><td>急救包</td><td class="td-center">2</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 經費 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十四</span>
+      <span class="sec-title">活動代辦經費概算表</span>
+    </div>
+    <div class="budget-summary">
+      <div class="budget-card total">
+        <div class="budget-label">活動總費用</div>
+        <div class="budget-amount">$54,899</div>
+        <div class="budget-sub">新臺幣元整（不含車馬費）</div>
+      </div>
+      <div class="budget-card school">
+        <div class="budget-label">學校核撥（代收代付）</div>
+        <div class="budget-amount">$30,000</div>
+        <div class="budget-sub">主計核定預算</div>
+      </div>
+      <div class="budget-card assoc">
+        <div class="budget-label">協會公益贊助</div>
+        <div class="budget-amount">$24,899</div>
+        <div class="budget-sub">差額由協會自行吸收</div>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>項次</th><th>款項名稱及用途</th><th>單位</th><th>數量</th><th>單價</th><th>金額</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td class="td-center">1</td><td>裝備清潔保養費</td><td class="td-center">人</td><td class="td-center">40</td><td class="td-num">200</td><td class="td-num">8,000</td><td>含頭盔、安全吊帶、鉤環維護清潔費（由人員簽領據核銷）</td></tr>
+          <tr><td class="td-center">2</td><td>攀樹系統架設</td><td class="td-center">組</td><td class="td-center">5</td><td class="td-num">2,000</td><td class="td-num">10,000</td><td>含護樹器材、攀樹繩組、投擲系統</td></tr>
+          <tr><td class="td-center">3</td><td>主教官鐘點費</td><td class="td-center">小時</td><td class="td-center">4</td><td class="td-num">2,000</td><td class="td-num">8,000</td><td>含課程設計、帶領與安全管理</td></tr>
+          <tr><td class="td-center">4</td><td>助教鐘點費</td><td class="td-center">人×小時</td><td class="td-center">20</td><td class="td-num">1,000</td><td class="td-num">20,000</td><td>含裝備指導、安全協助、後勤支援</td></tr>
+          <tr><td class="td-center">5</td><td>保險費—學生（新兒童計畫第二類）</td><td class="td-center">人</td><td class="td-center">20</td><td class="td-num">62</td><td class="td-num">1,240</td><td>未滿 15 歲學生 20 人</td></tr>
+          <tr><td class="td-center">6</td><td>保險費—成人（計畫一第二類）</td><td class="td-center">人</td><td class="td-center">39</td><td class="td-num">141</td><td class="td-num">5,499</td><td>家長 20＋教師 3＋工作人員 6＋志工 10</td></tr>
+          <tr><td class="td-center">7</td><td>餐飲費（工作人員及志工）</td><td class="td-center">份</td><td class="td-center">18</td><td class="td-num">120</td><td class="td-num">2,160</td><td>工作人員 6＋志工 10＋機動 2 人</td></tr>
+          <tr><td class="td-center">8</td><td>車馬費</td><td class="td-center">人</td><td class="td-center">6</td><td class="td-center">核實</td><td class="td-center">核實支付</td><td>依教育部補助要點核實支付</td></tr>
+          <tr class="row-total"><td colspan="5" style="text-align:right;padding-right:20px;">小計（不含車馬費）</td><td class="td-num" style="color:white;">54,899</td><td></td></tr>
+          <tr class="row-school"><td colspan="5" style="text-align:right;padding-right:20px;">🏫 學校主計核撥（代收代付）</td><td class="td-num" style="color:#1e40af;">30,000</td><td>學校核定預算</td></tr>
+          <tr class="row-assoc"><td colspan="5" style="text-align:right;padding-right:20px;">🌳 協會公益贊助（差額自行吸收）</td><td class="td-num" style="color:#2d6a2d;">24,899</td><td>協會公益贊助，不向學校收取</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">各項代辦費用依教育部核定標準及實際營運成本估算，採代收代付方式辦理，協會不從中獲取任何收益。</div>
+    <div class="note">如遇政府預算刪減，協會將以公益精神協助協調，確保活動順利舉行。</div>
+  </div>
+
+  <!-- 風險管理 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十五</span>
+      <span class="sec-title">身心障礙親子攀樹活動風險管理矩陣</span>
+    </div>
+    <div class="risk-legend">
+      <div class="risk-dot"><span class="r-green"></span>低風險（1–4）</div>
+      <div class="risk-dot"><span class="r-yellow"></span>中風險（5–9）</div>
+      <div class="risk-dot"><span class="r-red"></span>高風險（10+）</div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">風險項目</th>
+            <th colspan="3" style="text-align:center;background:#374151;">預防措施前</th>
+            <th rowspan="2">預防措施與改進方法</th>
+            <th colspan="3" style="text-align:center;background:#374151;">措施後殘餘風險</th>
+            <th rowspan="2">說明</th>
+          </tr>
+          <tr>
+            <th style="background:#4b5563;font-size:12px;">可能</th>
+            <th style="background:#4b5563;font-size:12px;">嚴重</th>
+            <th style="background:#4b5563;font-size:12px;">風險值</th>
+            <th style="background:#374151;font-size:12px;">可能</th>
+            <th style="background:#374151;font-size:12px;">嚴重</th>
+            <th style="background:#374151;font-size:12px;">風險值</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>墜落／滑脫</strong></td><td class="td-center">2</td><td class="td-center">4</td><td class="td-center risk-before">8</td><td>雙繩確保系統全程使用、一對一安全確保、教官團均具消防繩索救援專業證照、所有裝備活動前逐一檢查並記錄</td><td class="td-center">1</td><td class="td-center">1</td><td class="td-center risk-after-low">1</td><td>八年零墜落事故紀錄；雙繩系統即使一繩失效仍有備援</td></tr>
+          <tr><td><strong>癲癇發作（樹上／牆上）</strong></td><td class="td-center">2</td><td class="td-center">4</td><td class="td-center risk-before">8</td><td>事前掌握個案病史並標記、高風險學生採地面體驗或吊椅模式、現場 EMT 人員可即時處置、備緊急下降系統</td><td class="td-center">1</td><td class="td-center">2</td><td class="td-center risk-after-low">2</td><td>不安排癲癇高風險學生獨立攀爬，改以安全替代方案參與</td></tr>
+          <tr><td><strong>情緒暴衝／自傷行為</strong></td><td class="td-center">3</td><td class="td-center">3</td><td class="td-center risk-before">9</td><td>一對一陪伴志工全程觀察、Challenge by Choice 絕不強迫、備安靜緩衝區、與隨行教師建立即時通報暗號</td><td class="td-center">2</td><td class="td-center">2</td><td class="td-center risk-after-low">4</td><td>尊重孩子節奏，情緒升高立即引導至安全區域</td></tr>
+          <tr><td><strong>肢體障礙參與困難</strong></td><td class="td-center">4</td><td class="td-center">1</td><td class="td-center risk-before">4</td><td>不設限理念、提供吊椅／鞦韆／走繩／建築繩索多元體驗方式、依個別能力量身調整</td><td class="td-center">1</td><td class="td-center">1</td><td class="td-center risk-after-low">1</td><td>每位孩子都有適合的參與方式</td></tr>
+          <tr><td><strong>皮膚過敏／裝備不適</strong></td><td class="td-center">3</td><td class="td-center">2</td><td class="td-center risk-before">6</td><td>吊帶加裝內襯軟墊、建議穿長袖長褲隔離接觸、活動前先試穿測試、備抗敏藥品</td><td class="td-center">1</td><td class="td-center">1</td><td class="td-center risk-after-low">1</td><td>簡易防護即可有效隔離</td></tr>
+          <tr><td><strong>中暑／熱傷害</strong></td><td class="td-center">3</td><td class="td-center">3</td><td class="td-center risk-before">9</td><td>選擇樹蔭下及建築遮蔽處作業、每 20 分鐘集體飲水休息、備冰桶降溫物資</td><td class="td-center">1</td><td class="td-center">2</td><td class="td-center risk-after-low">2</td><td>定時休息可有效預防</td></tr>
+          <tr><td><strong>溝通困難／聽不懂指令</strong></td><td class="td-center">4</td><td class="td-center">2</td><td class="td-center risk-before">8</td><td>活動前與教師逐一了解每位學生溝通方式、以肢體示範取代口語、家長或教師在旁協助轉譯</td><td class="td-center">2</td><td class="td-center">1</td><td class="td-center risk-after-low">2</td><td>攀樹動作直覺化，配合示範影響極低</td></tr>
+          <tr><td><strong>天候突變</strong></td><td class="td-center">2</td><td class="td-center">3</td><td class="td-center risk-before">6</td><td>活動前三日密切追蹤氣象、落雷偵測即時撤收、備室內替代方案或延期機制</td><td class="td-center">1</td><td class="td-center">1</td><td class="td-center risk-after-low">1</td><td>提前研判不勉強出隊</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box green" style="margin-top:20px;">
+      <div class="box-title">✅ 安全結論</div>
+      經預防措施後，所有風險項目之殘餘風險值均降至 4 分以下（低風險等級），活動安全可控。協會教官團核心成員均為現職消防員，具備 EMT 緊急救護及繩索救援專業能力，累積<strong>八年以上攀樹體驗教育零事故紀錄</strong>。
+    </div>
+  </div>
+
+  <!-- 預期效益 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十六</span>
+      <span class="sec-title">預期效益</span>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🌊</div>
+        <div class="benefit-title">探險心流體驗</div>
+        <div class="benefit-desc">讓身心障礙學生在攀樹及繩索探索過程中進入專注投入的心流狀態，體驗純粹的挑戰與成就感。</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💛</div>
+        <div class="benefit-title">親子情感連結</div>
+        <div class="benefit-desc">家長與孩子在熟悉的校園裡共同面對挑戰，深化親子信任與情感紐帶，建立珍貴的共同記憶。</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌿</div>
+        <div class="benefit-title">五感自然體驗</div>
+        <div class="benefit-desc">透過觸覺、聽覺、嗅覺、視覺、本體覺，讓孩子用整個身體親近大自然的美好。</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌍</div>
+        <div class="benefit-title">人文自然教育</div>
+        <div class="benefit-desc">融入「感謝大樹」環境教育理念，培養孩子對自然環境的尊重與感恩。</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📋</div>
+        <div class="benefit-title">教學觀察資源</div>
+        <div class="benefit-desc">提供隨行教師觀察學生在非傳統環境中的身體能力、情緒反應與社交互動，豐富 IEP 參考資料。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 其他風險說明 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十七</span>
+      <span class="sec-title">其他風險說明</span>
+    </div>
+    <div class="risk-card"><div class="risk-card-title">🌧️ 氣候因素</div><div class="risk-card-body">活動期間如遇大雨、颱風等不可抗拒因素，由主辦方以體驗者安全為考量決定是否取消或延期，協會配合辦理。</div></div>
+    <div class="risk-card"><div class="risk-card-title">🏥 健康因素</div><div class="risk-card-body">活動前將收集所有參與者之健康調查表，針對特殊狀況（癲癇、自傷行為、重度肢障等）預先擬定個別安全計畫。</div></div>
+    <div class="risk-card"><div class="risk-card-title">🚑 緊急醫療</div><div class="risk-card-body">活動現場備有急救包及具緊急救護能力之工作人員（現職消防員），並事先確認鄰近醫療院所位置及後送路線。</div></div>
+    <div class="risk-card"><div class="risk-card-title">🛡️ 保險保障</div><div class="risk-card-body">全員投保富邦產物特定活動綜合險。未滿 15 歲學生適用新兒童計畫第二類（62 元／人），成人適用計畫一第二類（141 元／人）。承保範圍涵蓋意外傷害事故及特定事故（含中暑、熱衰竭等），含身故／失能保險金、實支實付醫療保險金及緊急救援費用保險金。</div></div>
+  </div>
+
+  <!-- 備註 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十八</span>
+      <span class="sec-title">備註</span>
+    </div>
+    <ul class="bullet-list">
+      <li>本企劃書代辦費用為初步估算，正式執行前將依實際參與人數及場地狀況調整。活動結束後將提供代收代付結算明細。</li>
+      <li>活動當天需請學校協助提供每位學生之活動同意書（含個資同意、肖像授權）。</li>
+      <li>活動結束後兩週內，協會將提供成果報告、照片紀錄供學校留存。</li>
+      <li>如有服務時數證明需求，請主動聯繫協會（tree.whisper.0105&#64;gmail.com）。</li>
+    </ul>
+  </div>
+
+  <!-- 合作說明 -->
+  <div class="sec">
+    <div class="sec-header">
+      <span class="sec-num">十九</span>
+      <span class="sec-title">合作建議說明</span>
+    </div>
+    <div class="box bark">
+      <div class="box-title">🌳 關於台灣樹・説自然人文協會</div>
+      <p style="color:#475569;line-height:1.9;">「台灣樹・説自然人文協會」以推廣戶外自然人文體驗教育為核心使命，深信大樹會説話，只要真心參與就能聽見。協會幹部多為現職消防員，具備專業繩索救援及緊急救護能力，活動團隊累積八年以上之攀樹體驗教育經驗，並曾於多所學校建築執行繩索探索課程，安全紀錄良好。</p>
+    </div>
+    <div class="box green" style="margin-top:16px;">
+      <div class="box-title">💚 關於本次公益贊助</div>
+      <p style="color:#2d4a2d;line-height:1.9;">鑑於內壢國小主計核定預算為新臺幣 30,000 元，與完整活動所需費用 54,899 元之間尚有差距，協會決定以公益贊助方式自行吸收差額 24,899 元，不向學校或家長收取任何額外費用。本次活動對協會而言是一次公益示範，讓每一位有需要的孩子，都能不因預算限制而錯過與大自然連結的機會。各項代辦費用採代收代付方式辦理，協會不從中獲取任何收益。</p>
+    </div>
+  </div>
+
+  <!-- 簽章 -->
+  <div class="sec">
+    <div class="sig-block">
+      <div>
+        <div class="sig-party">承辦單位：台灣樹・説自然人文協會</div>
+        <div class="sig-line">理事長：<span>　　　　　　　</span></div>
+        <div class="sig-line">聯絡人：<span>　　　　　　　</span></div>
+        <div class="sig-line">電　話：<span>　　　　　　　</span></div>
+        <div class="sig-line">Email：<span>tree.whisper.0105&#64;gmail.com</span></div>
+      </div>
+      <div>
+        <div class="sig-party">主辦單位：桃園市內壢國民小學</div>
+        <div class="sig-line">校　長：<span>　　　　　　　</span></div>
+        <div class="sig-line">聯絡人：<span>　　　　　　　</span></div>
+        <div class="sig-line">電　話：<span>　　　　　　　</span></div>
+        <div class="sig-line">Email：<span>　　　　　　　</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end doc-wrap -->
+</body>
+</html>
